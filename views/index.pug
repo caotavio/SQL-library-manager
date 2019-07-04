@@ -1,0 +1,32 @@
+extends layout.pug
+block content
+    h1 
+      a(href='/') Books
+    form(method='get' action='/books')
+        p
+          input#search(name='search', type='search')
+          input(type='submit', value='Search')
+          a.button(href='/books/new') Create New Book
+    table
+      thead
+        tr
+          th Title
+          th Author
+          th Genre
+          th Year
+      tbody
+        each item in books
+          tr
+            td
+              a(href='/books/' + item.id)= item.title
+            td= item.author
+            td= item.genre
+            td= item.year
+    each item, index in pageLink
+      ul.pagination
+        if index == page
+          li
+            a.active(href='/books/?page=' + index + '&search=' + searchString)= item
+        else
+          li
+            a(href='/books/?page=' + index + '&search=' + searchString)= item
