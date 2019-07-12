@@ -29,6 +29,14 @@ app.use(function(req, res, next) {
   res.render("page-not-found");
 });
 
+app.use(function (err, req, res, next) {
+  if (err.status === 404) {
+      res.render('page-not-found');
+  } else {
+      res.render('error');
+  }
+});
+
 // If database syncs, the server starts
 
 sequelize

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Books = require("../models").Books;
+const Books = require("../models").Book;
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());

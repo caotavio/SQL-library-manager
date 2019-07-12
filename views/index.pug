@@ -22,7 +22,7 @@ block content
             td= item.author
             td= item.genre
             td= item.year
-    each item, index in pageLink
+    each item, index in linkArray
       ul.pagination
         if index == page
           li

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Books = require("../models").Books;
-const Op = require("Sequelize").Op; // this lets you use queries with findAndCountAll using WHERE + key-value pairs
+const Books = require("../models").Book;
+const Op = require("sequelize").Op; // this lets you use queries with findAndCountAll using WHERE + key-value pairs
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
@@ -57,15 +57,15 @@ router.get("/:id/delete", (req, res, next) => {
 // functions that returns an array based on rowCount and offset input
 
 const createPageArray = (rowCount, offset) => {
-    let pageLink = [];
+    let pageLinks = [];
     let pagination = 1;
   
     for (let i = 0; i < parseInt(rowCount); i += offset) {
-      pageLink.push(pagination);
+      pageLinks.push(pagination);
       pagination += 1;
     }
   
-    return pageLink;
+    return pageLinks;
   };
   
   // Book list based on search and page.
