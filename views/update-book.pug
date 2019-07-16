@@ -17,6 +17,6 @@ block content
             label(for='year') Year
             input#year(name='year', type='text', value=books.year)
         p
-            input(type='submit', value='Update Book')
-            a.button(href=books.id + '/delete/') Delete
+            input.button(type='submit', value='Update Book')
+            a.button.delete(href=books.id + '/delete/') Delete
             a.button(href='/') Cancel

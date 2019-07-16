@@ -1,6 +1,9 @@
-if(errors)
-    h2.error Oooops!
-    each error in errors
-        ul.error
-        li
-            =error.message
+extends layout.pug
+
+block content
+    if(errors)
+        h2.error It looks like you missed one or more of the required fields:
+            each error in errors
+                ul.error
+                    li
+                        =error.message

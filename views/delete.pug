@@ -8,4 +8,4 @@ block content
   p
     form(action="/books/" + id + "/delete", method="post")
             a.button(href="/books/" + id) Cancel
-            input(type="submit", value = "Delete")
+            input.button.delete(type="submit", value = "Delete")

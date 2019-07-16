@@ -9,6 +9,56 @@ a {
   color: #00B7FF;
 }
 
+.button {
+  background-color: #008CBA;
+  color: white;
+  padding: 1px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid white;
+}
+
+.delete {
+  background-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+}
+
+input {
+  border: 1.5px solid black;
+  margin: 2px 2px;
+}
+
+label {
+  padding: 1px 5px;
+}
+
+.pagination {
+  display: inline-block;
+  list-style: none;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 2px 4px;
+  text-decoration: none;
+  border: 1px solid black;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: rgb(85, 7, 131);
+  color: white;
+  border-radius: 5px;
+}
+
 td, th {
   border: 1px solid #ddd;
   padding: 8px;

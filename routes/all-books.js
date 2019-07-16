@@ -11,7 +11,13 @@ router.use(express.json());
 router.get("/:id", (req, res, next) => {
     const { id } = req.params;
     Books.findByPk(id)
-      .then(data => res.render("update-book", { books: data.dataValues }))
+      .then(data => {
+        if (data) {
+          res.render("update-book", { books: data.dataValues })
+        } else {
+          res.render("page-not-found");
+        }
+      })
       .catch(err => next(err));
   });
   
@@ -20,7 +26,7 @@ router.get("/:id", (req, res, next) => {
     const { body } = req;
     Books.findByPk(id)
       .then(book => book.update(body)) // updates entry using the body variable
-      .then(book => res.redirect("/books/" + id))
+      .then(() => res.redirect("/books/"))
       .catch(err => {
         if (err.name === "SequelizeValidationError") {
           body.id = id;

@@ -8,11 +8,9 @@ const bodyParser = require("body-parser");
 // view engine setup
 app.set('view engine', 'pug');
 
-// use body parser requests IF IT DOES NOT WORK COMMENT IT OUT
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/static", express.static("public"));
-// app.use(require("express-favicon-short-circuit")); NEEDS TO BE INSTALLED IF USED
 
 // Sets routes. GET and POST is dealt with in individual routes
 
