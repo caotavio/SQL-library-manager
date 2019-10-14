@@ -2,7 +2,7 @@ const express = require('express');
 const sequelize = require("./models").sequelize;
 const app = express();
 
-const PORT = 3000; // if you need to change your port, do it here
+const PORT = process.env.PORT || 3000; // if you need to change your port, do it here
 const bodyParser = require("body-parser");
 
 // view engine setup
